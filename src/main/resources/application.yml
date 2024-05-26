@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:CRUD
+    username: Il Grande Worro
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+  h2:
+    enabled: true
