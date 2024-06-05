@@ -14,12 +14,12 @@ public class CarController {
     @Autowired
     CarService service;
 
-    @PostMapping("/create")
+    @PostMapping
     public Car createCar(@RequestBody Car car) {
         return service.saveCar(car);
     }
 
-    @GetMapping("/catalog")
+    @GetMapping
     public List<Car> showAllCars() {
         return service.showCars();
     }
@@ -29,12 +29,12 @@ public class CarController {
         return service.showCarByID(id);
     }
 
-    @PutMapping("/edit/{id}")
+    @PutMapping("/{id}")
     public Car changeTypeOfThisCarByID(@PathVariable long id, @RequestParam(required = false) String type) {
         return service.changeTypeOfCarWithID(id, type);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity removeThisCar(@PathVariable long id) throws ClassNotFoundException {
         try{
             service.deleteSpecificCar(id);
